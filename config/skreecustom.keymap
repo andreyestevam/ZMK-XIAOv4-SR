@@ -103,14 +103,14 @@
 
         numPad {
             bindings = <
-&trans  &trans  &trans  &trans          &trans    &trans    &trans     &kp ESC       &kp TAB       &kp EQUAL     &kp CLEAR       &trans
-&trans  &trans  &trans  &trans          &trans    &trans    &trans     &kp N0        &kp SLASH     &kp ASTERISK  &kp MINUS       &trans
-&trans  &trans  &trans  &trans          &trans    &trans    &kp COMMA  &kp N7        &kp N8        &kp N9        &kp PLUS        &trans
-&trans  &trans  &trans  &trans          &trans    &trans    &kp N0     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp APOSTROPHE  &trans
-&trans  &trans  &trans  &mkp MB1        &mkp MB2                       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER       &trans
-                                        &trans    &trans    &trans
-                        &trans          &trans    &trans    &trans     &trans        &trans
-                        &kp LEFT_SHIFT  &trans    &trans    &kp N0     &kp PERIOD    &kp RET
+&trans  &trans  &trans  &trans     &trans            &trans          &kp ESCAPE   &kp N0        &kp SLASH          &kp ASTERISK  &kp MINUS    &kp CLEAR
+&trans  &trans  &trans  &trans     &trans            &trans          &kp PERCENT  &kp N7        &kp N8             &kp N9        &kp KP_PLUS  &trans
+&trans  &trans  &trans  &trans     &trans            &trans          &kp COMMA    &kp NUMBER_4  &kp N5             &kp NUMBER_6  &kp COMMA    &trans
+&trans  &trans  &trans  &trans     &trans            &trans          &kp N0       &kp NUMBER_1  &kp NUMBER_2       &kp NUMBER_3  &kp RETURN   &trans
+&trans  &trans  &trans  &mkp MB1   &mkp MB2                                       &kp N0        &kp PERIOD         &kp EQUAL     &kp ENTER    &trans
+                                   &trans            &trans          &trans
+                        &kp LSHFT  &kp LEFT_CONTROL  &kp LEFT_ALT    &kp TAB      &kp DELETE    &kp RIGHT_COMMAND
+                        &kp SPACE  &kp LEFT_COMMAND  &kp TAB         &kp RSHIFT   &kp RETURN    &kp BACKSPACE
             >;
         };
 
