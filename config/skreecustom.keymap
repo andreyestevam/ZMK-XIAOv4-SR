@@ -116,14 +116,14 @@
 
         mouseEmulation {
             bindings = <
-&trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans          &msc SCRL_UP    &trans           &trans  &trans
-&trans  &trans  &trans  &trans    &trans    &trans    &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans          &kp UP_ARROW    &trans           &trans  &trans
-&trans  &trans  &trans  &mkp MB1  &mkp MB2                    &kp LEFT_ARROW  &kp DOWN        &kp RIGHT        &trans  &trans
+&trans  &trans  &trans  &trans    &trans    &trans    &trans          &msc SCRL_UP    &trans           &trans    &trans          &trans
+&trans  &trans  &trans  &trans    &trans    &trans    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans          &trans
+&trans  &trans  &trans  &trans    &trans    &trans    &trans          &mmv MOVE_UP    &trans           &trans    &trans          &trans
+&trans  &trans  &trans  &trans    &trans    &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans    &kp UP_ARROW    &trans
+&trans  &trans  &trans  &mkp MB1  &mkp MB2                            &trans          &trans           &kp LEFT  &kp DOWN_ARROW  &kp RIGHT
                                   &trans    &trans    &trans
-                        &trans    &trans    &trans    &trans  &trans          &trans
-                        &trans    &trans    &trans    &trans  &trans          &trans
+                        &trans    &trans    &trans    &trans          &trans          &trans
+                        &trans    &trans    &trans    &trans          &trans          &trans
             >;
         };
     };
