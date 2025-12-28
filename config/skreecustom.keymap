@@ -142,14 +142,14 @@
 
         gamingLayer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp W   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp A   &kp S   &kp D   &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans    &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans    &trans     &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&kp APOS  &kp TAB    &kp Q   &kp W   &kp E   &kp R     &trans  &trans  &trans  &trans  &trans  &trans
+&kp T     &kp LSHFT  &kp A   &kp S   &kp D   &kp F     &trans  &trans  &trans  &trans  &trans  &trans
+&kp B     &kp LCTRL  &kp Z   &kp X   &kp C   &kp G     &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &trans     &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+                                     &trans  &trans    &trans
+                             &trans  &trans  &trans    &trans  &trans  &trans
+                             &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
