@@ -24,6 +24,18 @@
 
             tap-ms = <5>;
         };
+
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            quick-tap-ms = <400>;
+            require-prior-idle-ms = <400>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -31,14 +43,14 @@
 
         default_layer {
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3     &kp N4            &kp N5          &kp N6      &kp N7          &kp N8         &kp N9    &kp N0        &kp EQUAL
-&kp TAB           &kp Q   &kp W   &kp E      &kp R             &kp T           &kp Y       &kp U           &kp I          &kp O     &kp P         &kp MINUS
-&kp CAPSLOCK      &kp A   &kp S   &kp D      &kp F             &kp G           &kp H       &kp J           &kp K          &kp L     &kp SEMI      &kp SQT
-&kp LSHFT         &kp Z   &kp X   &kp C      &kp V             &kp B           &kp N       &kp M           &kp COMMA      &kp DOT   &kp FSLH      &kp BSLH
-&kp LEFT_CONTROL  &mo 5   &mo 6   &mkp MB1   &mkp MB2                                      &kp LEFT_ARROW  &kp RIGHT      &kp DOWN  &kp UP_ARROW  &mo 3
-                                             &tog 7            &kp C_NEXT      &kp C_MUTE
-                                  &kp LSHFT  &kp LEFT_CONTROL  &kp LEFT_ALT    &kp TAB     &kp DEL         &kp RGUI
-                                  &kp SPACE  &kp LEFT_COMMAND  &kp TAB         &kp RSHIFT  &kp ENTER       &kp BACKSPACE
+&kp ESC           &kp N1               &kp N2               &kp N3           &kp N4             &kp N5          &kp N6      &kp N7          &kp N8            &kp N9            &kp N0                        &kp EQUAL
+&kp TAB           &kp Q                &kp W                &kp E            &kp R              &kp T           &kp Y       &kp U           &kp I             &kp O             &kp P                         &kp MINUS
+&kp CAPSLOCK      &hmr LEFT_CONTROL A  &hmr LEFT_COMMAND S  &hmr LEFT_ALT D  &hmr LEFT_SHIFT F  &kp G           &kp H       &hmr RSHFT J    &hmr RIGHT_ALT K  &hmr RIGHT_GUI L  &hmr RIGHT_CONTROL SEMICOLON  &kp SQT
+&kp LSHFT         &kp Z                &kp X                &kp C            &kp V              &kp B           &kp N       &kp M           &kp COMMA         &kp DOT           &kp FSLH                      &kp BSLH
+&kp LEFT_CONTROL  &mo 5                &mo 6                &mkp MB1         &mkp MB2                                       &kp LEFT_ARROW  &kp RIGHT         &kp DOWN          &kp UP_ARROW                  &mo 3
+                                                                             &tog 7             &kp C_NEXT      &kp C_MUTE
+                                                            &kp LSHFT        &kp LEFT_CONTROL   &kp LEFT_ALT    &kp TAB     &kp DEL         &kp RGUI
+                                                            &kp SPACE        &kp LEFT_COMMAND   &kp TAB         &kp RSHIFT  &kp ENTER       &kp BACKSPACE
             >;
 
             sensor-bindings =
