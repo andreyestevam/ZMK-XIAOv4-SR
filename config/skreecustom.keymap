@@ -43,18 +43,18 @@
 
         default_layer {
             bindings = <
-&kp ESC           &kp N1               &kp N2               &kp N3           &kp N4             &kp N5          &kp N6      &kp N7          &kp N8            &kp N9            &kp N0                        &kp EQUAL
-&kp TAB           &kp Q                &kp W                &kp E            &kp R              &kp T           &kp Y       &kp U           &kp I             &kp O             &kp P                         &kp MINUS
-&kp CAPSLOCK      &hmr LEFT_CONTROL A  &hmr LEFT_COMMAND S  &hmr LEFT_ALT D  &hmr LEFT_SHIFT F  &kp G           &kp H       &hmr RSHFT J    &hmr RIGHT_ALT K  &hmr RIGHT_GUI L  &hmr RIGHT_CONTROL SEMICOLON  &kp SQT
-&kp LSHFT         &kp Z                &kp X                &kp C            &kp V              &kp B           &kp N       &kp M           &kp COMMA         &kp DOT           &kp FSLH                      &kp BSLH
-&kp LEFT_CONTROL  &mo 5                &mo 6                &mkp MB1         &mkp MB2                                       &kp LEFT_ARROW  &kp RIGHT         &kp DOWN          &kp UP_ARROW                  &mo 3
-                                                                             &tog 7             &kp C_NEXT      &kp C_MUTE
-                                                            &kp LSHFT        &kp LEFT_CONTROL   &kp LEFT_ALT    &kp TAB     &kp DEL         &kp RGUI
-                                                            &kp SPACE        &kp LEFT_COMMAND   &kp TAB         &kp RSHIFT  &kp ENTER       &kp BACKSPACE
+&kp ESC                          &kp N1               &kp N2               &kp N3           &kp N4             &kp N5          &kp N6      &kp N7          &kp N8            &hmr LG(LS(N9)) N9  &kp N0                        &kp EQUAL
+&kp TAB                          &kp Q                &kp W                &kp E            &kp R              &kp T           &kp Y       &kp U           &kp I             &kp O               &kp P                         &kp MINUS
+&kp CAPSLOCK                     &hmr LEFT_CONTROL A  &hmr LEFT_COMMAND S  &hmr LEFT_ALT D  &hmr LEFT_SHIFT F  &kp G           &kp H       &hmr RSHFT J    &hmr RIGHT_ALT K  &hmr RIGHT_GUI L    &hmr RIGHT_CONTROL SEMICOLON  &kp SQT
+&kp LSHFT                        &kp Z                &kp X                &hmr LG(C) C     &hmr LG(V) V       &kp B           &kp N       &kp M           &kp COMMA         &kp DOT             &kp FSLH                      &kp BSLH
+&hmr LC(LG(SPACE)) LEFT_CONTROL  &mo 5                &mo 6                &mkp MB1         &mkp MB2                                       &kp LEFT_ARROW  &kp RIGHT         &kp DOWN            &kp UP_ARROW                  &mo 3
+                                                                                            &tog 7             &tog 1          &kp C_MUTE
+                                                                           &kp LSHFT        &kp LEFT_CONTROL   &kp LEFT_ALT    &kp TAB     &kp DEL         &kp RGUI
+                                                                           &kp SPACE        &kp LEFT_COMMAND   &kp TAB         &kp RSHIFT  &kp ENTER       &kp BACKSPACE
             >;
 
             sensor-bindings =
-                <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>,
+                <&inc_dec_kp C_PREVIOUS C_NEXT>,
                 <&inc_dec_kp UP_ARROW DOWN_ARROW>,
                 <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
@@ -128,11 +128,11 @@
 
         numPad {
             bindings = <
-&trans  &trans  &trans  &trans    &trans    &trans    &kp ESCAPE   &kp N0        &kp SLASH     &kp ASTERISK  &kp MINUS    &kp CLEAR
-&trans  &trans  &trans  &trans    &trans    &trans    &kp PERCENT  &kp N7        &kp N8        &kp N9        &kp KP_PLUS  &trans
-&trans  &trans  &trans  &trans    &trans    &trans    &kp COMMA    &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp COMMA    &trans
-&trans  &trans  &trans  &trans    &trans    &trans    &kp N0       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp RETURN   &trans
-&trans  &trans  &trans  &mkp MB1  &mkp MB2                         &kp N0        &kp PERIOD    &kp EQUAL     &kp ENTER    &trans
+&trans  &trans  &trans  &trans    &trans    &trans    &kp ESCAPE   &kp N0        &kp SLASH     &kp ASTERISK        &kp MINUS    &kp CLEAR
+&trans  &trans  &trans  &trans    &trans    &trans    &kp PERCENT  &kp N7        &kp N8        &hmr LG(LS(N9)) N9  &kp KP_PLUS  &trans
+&trans  &trans  &trans  &trans    &trans    &trans    &kp COMMA    &kp NUMBER_4  &kp N5        &kp NUMBER_6        &kp COMMA    &trans
+&trans  &trans  &trans  &trans    &trans    &trans    &kp N0       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3        &kp RETURN   &trans
+&trans  &trans  &trans  &mkp MB1  &mkp MB2                         &kp N0        &kp PERIOD    &kp EQUAL           &kp ENTER    &trans
                                   &trans    &trans    &trans
                         &trans    &trans    &trans    &trans       &trans        &trans
                         &trans    &trans    &trans    &trans       &trans        &trans
@@ -162,6 +162,19 @@
                                      &trans  &trans    &trans
                              &trans  &trans  &trans    &trans  &trans  &trans
                              &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        macrosLayer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans    &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
