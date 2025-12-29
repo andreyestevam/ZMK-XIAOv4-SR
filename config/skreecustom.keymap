@@ -50,6 +50,20 @@
             #binding-cells = <0>;
             bindings = <&kp H>, <&key_repeat>;
         };
+
+        symbolsLayerTripleTap: symbolsLayerTripleTap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SYMBOLSLAYERTRIPLETAP";
+            #binding-cells = <0>;
+            bindings = <&tog 9>, <&sl 9>, <&mo 9>;
+        };
+
+        unicodeArrowsSymbol: unicodeArrowsSymbol {
+            compatible = "zmk,behavior-tap-dance";
+            label = "UNICODEARROWSSYMBOL";
+            #binding-cells = <0>;
+            bindings = <&rightArrowUnicode>, <&doubleArrowUnicode>;
+        };
     };
 
     combos {
@@ -96,6 +110,27 @@
             bindings = <&kp COMMA &kp SPACE>;
             label = "COMMASPACE";
         };
+
+        programmingParenthesis: programmingParenthesis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RPAR &kp LEFT_ARROW>;
+            label = "PROGRAMMINGPARENTHESIS";
+        };
+
+        rightArrowUnicode: rightArrowDoubleTap {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LC(SPACE)) &kp R &kp I &kp G &kp H &kp T &kp SPACE &kp A &kp R &kp R &kp O &kp W &kp RET>;
+            label = "RIGHTARROWDOUBLETAP";
+        };
+
+        doubleArrowUnicode: doubleArrowUnicode {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LC(SPACE)) &kp R &kp I &kp G &kp H &kp T &kp W &kp A &kp R &kp D &kp S &kp SPACE &kp D &kp O &kp U &kp B &kp L &kp E &kp SPACE &kp A &kp R &kp R &kp O &kp W &kp RET>;
+            label = "DOUBLEARROWUNICODE";
+        };
     };
 
     keymap {
@@ -103,13 +138,13 @@
 
         default_layer {
             bindings = <
-&kp ESC       &kp N1               &kp N2               &kp N3           &kp N4              &kp N5          &kp N6       &kp N7          &kp N8            &hmr LG(LS(N9)) N9  &kp N0                        &kp EQUAL
-&kp TAB       &kp Q                &kp W                &kp E            &hmr LG(R) R        &hmr LG(T) T    &kp Y        &kp U           &kp I             &kp O               &kp P                         &kp MINUS
-&kp CAPSLOCK  &hmr LEFT_CONTROL A  &hmr LEFT_COMMAND S  &hmr LEFT_ALT D  &hmr LEFT_SHIFT F   &kp G           &hKeyRepeat  &hmr RSHFT J    &hmr RIGHT_ALT K  &hmr RIGHT_GUI L    &hmr RIGHT_CONTROL SEMICOLON  &kp SQT
-&kp LSHFT     &kp Z                &kp X                &hmr LG(C) C     &hmr LG(V) V        &kp B           &kp N        &kp M           &kp COMMA         &kp DOT             &hmr LG(LA(FSLH)) FSLH        &kp BSLH
-&kp LCTRL     &mo 5                &mo 6                &mkp MB1         &mkp MB2                                         &kp LEFT_ARROW  &kp RIGHT         &kp DOWN            &kp UP_ARROW                  &mo 4
+&kp ESC       &kp N1               &kp N2               &kp N3           &kp N4              &kp N5          &kp N6       &kp N7          &kp N8                  &hmr LG(LS(N9)) N9  &kp N0                        &kp EQUAL
+&kp TAB       &kp Q                &kp W                &kp E            &hmr LG(R) R        &hmr LG(T) T    &kp Y        &kp U           &kp I                   &kp O               &kp P                         &kp MINUS
+&kp CAPSLOCK  &hmr LEFT_CONTROL A  &hmr LEFT_COMMAND S  &hmr LEFT_ALT D  &hmr LEFT_SHIFT F   &kp G           &hKeyRepeat  &hmr RSHFT J    &hmr RIGHT_ALT K        &hmr RIGHT_GUI L    &hmr RIGHT_CONTROL SEMICOLON  &kp SQT
+&kp LSHFT     &kp Z                &kp X                &hmr LG(C) C     &hmr LG(V) V        &kp B           &kp N        &kp M           &kp COMMA               &kp DOT             &hmr LG(LA(FSLH)) FSLH        &kp BSLH
+&kp LCTRL     &mo 5                &mo 6                &mkp MB1         &mkp MB2                                         &kp LEFT_ARROW  &kp RIGHT               &kp DOWN            &kp UP_ARROW                  &mo 4
                                                                          &tog 7              &tog 3          &kp C_MUTE
-                                                        &kp LSHFT        &kp LEFT_CONTROL    &kp LEFT_ALT    &kp TAB      &kp DEL         &kp LC(D)
+                                                        &none            &none               &none           &kp DEL      &kp LC(D)       &symbolsLayerTripleTap
                                                         &kp SPACE        &CMD_ESC_doubleTap  &kp TAB         &kp RSHIFT   &kp ENTER       &kp BACKSPACE
             >;
 
@@ -240,14 +275,14 @@
 
         symbolsLayer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans    &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans        &trans     &trans         &trans            &trans     &trans           &trans     &trans                   &trans                 &trans      &trans                &trans
+&trans        &kp GRAVE  &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS  &kp PIPE         &kp CARET  &kp LEFT_BRACE           &kp RIGHT_BRACE        &kp DOLLAR  &unicodeArrowsSymbol  &trans
+&kp QUESTION  &kp EXCL   &kp ASTRK      &kp FSLH          &kp EQUAL  &kp AMPERSAND    &kp POUND  &programmingParenthesis  &kp RIGHT_PARENTHESIS  &kp UNDER   &kp SEMICOLON         &kp DOUBLE_QUOTES
+&trans        &kp TILDE  &kp PLUS       &kp LBKT          &kp RBKT   &kp PERCENT      &kp AT     &kp COLON                &kp COMMA              &kp DOT     &kp SINGLE_QUOTE      &trans
+&trans        &trans     &trans         &trans            &trans                                 &trans                   &trans                 &trans      &trans                &trans
+                                                          &trans     &trans           &trans
+                                        &trans            &trans     &trans           &trans     &trans                   &trans
+                                        &trans            &trans     &trans           &trans     &trans                   &trans
             >;
         };
     };
