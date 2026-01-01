@@ -107,6 +107,30 @@
             tapping-term-ms = <200>;
             bindings = <&kp LEFT_BRACE>, <&curlyBracketMacro>;
         };
+
+        doubleQuoteBehavior: doubleQuoteBehavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOUBLEQUOTEBEHAVIOR";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOUBLE_QUOTES>, <&doubleQuoteBehavior>;
+        };
+
+        singleQuoteBehavior: singleQuoteBehavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SINGLEQUOTEBEHAVIOR";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SINGLE_QUOTE>, <&singleQuoteMacro>;
+        };
+
+        squareBracketBehavior: squareBracketBehavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SQUAREBRACKETBEHAVIOR";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_BRACKET>, <&squareBracketMacro>;
+        };
     };
 
     combos {
@@ -187,6 +211,27 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
             label = "CURLYBRACKETMACRO";
+        };
+
+        doubleQuoteMacro: doubleQuoteMacro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT_ARROW>;
+            label = "DOUBLEQUOTEMACRO";
+        };
+
+        singleQuoteMacro: singleQuoteMacro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp SINGLE_QUOTE &kp LEFT_ARROW>;
+            label = "SINGLEQUOTEMACRO";
+        };
+
+        squareBracketMacro: squareBracketMacro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp SINGLE_QUOTE &kp LEFT_ARROW>;
+            label = "SQUAREBRACKETMACRO";
         };
     };
 
@@ -332,14 +377,14 @@
 
         symbolsLayer {
             bindings = <
-&trans        &trans     &trans         &trans            &trans     &trans           &trans                          &trans                           &trans                 &trans      &trans                &trans
-&trans        &kp GRAVE  &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS  &kp PIPE         &kp CARET                       &curlyBracketBehavior            &kp RIGHT_BRACE        &kp DOLLAR  &unicodeArrowsSymbol  &trans
-&kp QUESTION  &kp EXCL   &kp ASTRK      &kp FSLH          &kp EQUAL  &kp AMPERSAND    &commentingProgrammingBehavior  &programmingParenthesisBehavior  &kp RIGHT_PARENTHESIS  &kp UNDER   &kp SEMICOLON         &kp DOUBLE_QUOTES
-&trans        &kp TILDE  &kp PLUS       &kp LBKT          &kp RBKT   &kp PERCENT      &kp AT                          &kp COLON                        &kp COMMA              &kp DOT     &kp SINGLE_QUOTE      &trans
-&trans        &trans     &trans         &trans            &trans                                                      &trans                           &trans                 &trans      &trans                &trans
-                                                          &trans     &trans           &trans
-                                        &trans            &trans     &trans           &trans                          &trans                           &trans
-                                        &trans            &trans     &trans           &trans                          &trans                           &trans
+&trans        &trans     &trans         &trans                  &trans     &trans           &trans                          &trans                           &trans                 &trans      &trans                &trans
+&trans        &kp GRAVE  &kp LESS_THAN  &kp GREATER_THAN        &kp MINUS  &kp PIPE         &kp CARET                       &curlyBracketBehavior            &kp RIGHT_BRACE        &kp DOLLAR  &unicodeArrowsSymbol  &trans
+&kp QUESTION  &kp EXCL   &kp ASTRK      &kp FSLH                &kp EQUAL  &kp AMPERSAND    &commentingProgrammingBehavior  &programmingParenthesisBehavior  &kp RIGHT_PARENTHESIS  &kp UNDER   &kp SEMICOLON         &doubleQuoteBehavior
+&trans        &kp TILDE  &kp PLUS       &squareBracketBehavior  &kp RBKT   &kp PERCENT      &kp AT                          &kp COLON                        &kp COMMA              &kp DOT     &kp SINGLE_QUOTE      &trans
+&trans        &trans     &trans         &trans                  &trans                                                      &trans                           &trans                 &trans      &trans                &trans
+                                                                &trans     &trans           &trans
+                                        &trans                  &trans     &trans           &trans                          &trans                           &trans
+                                        &trans                  &trans     &trans           &trans                          &trans                           &trans
             >;
         };
     };
