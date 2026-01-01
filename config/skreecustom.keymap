@@ -140,6 +140,11 @@
             bindings = <&hmr LSHFT CAPSLOCK>;
             key-positions = <61 66>;
         };
+
+        warpdCombo {
+            bindings = <&kp LA(LG(X))>;
+            key-positions = <69 70>;
+        };
     };
 
     macros {
@@ -230,7 +235,7 @@
         squareBracketMacro: squareBracketMacro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SINGLE_QUOTE &kp SINGLE_QUOTE &kp LEFT_ARROW>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
             label = "SQUAREBRACKETMACRO";
         };
     };
