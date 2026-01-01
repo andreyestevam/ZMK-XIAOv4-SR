@@ -385,7 +385,7 @@
 &trans        &trans     &trans         &trans                  &trans     &trans           &trans                          &trans                           &trans                 &trans      &trans                &trans
 &trans        &kp GRAVE  &kp LESS_THAN  &kp GREATER_THAN        &kp MINUS  &kp PIPE         &kp CARET                       &curlyBracketBehavior            &kp RIGHT_BRACE        &kp DOLLAR  &unicodeArrowsSymbol  &trans
 &kp QUESTION  &kp EXCL   &kp ASTRK      &kp FSLH                &kp EQUAL  &kp AMPERSAND    &commentingProgrammingBehavior  &programmingParenthesisBehavior  &kp RIGHT_PARENTHESIS  &kp UNDER   &kp SEMICOLON         &doubleQuoteBehavior
-&trans        &kp TILDE  &kp PLUS       &squareBracketBehavior  &kp RBKT   &kp PERCENT      &kp AT                          &kp COLON                        &kp COMMA              &kp DOT     &kp SINGLE_QUOTE      &trans
+&trans        &kp TILDE  &kp PLUS       &squareBracketBehavior  &kp RBKT   &kp PERCENT      &kp AT                          &kp COLON                        &kp COMMA              &kp DOT     &singleQuoteBehavior  &trans
 &trans        &trans     &trans         &trans                  &trans                                                      &trans                           &trans                 &trans      &trans                &trans
                                                                 &trans     &trans           &trans
                                         &trans                  &trans     &trans           &trans                          &trans                           &trans
